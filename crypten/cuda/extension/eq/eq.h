@@ -1,0 +1,1 @@
+void launch_eq(int *a, int n);

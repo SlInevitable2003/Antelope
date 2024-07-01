@@ -1,0 +1,1 @@
+void launch_encode(int *a, int *r, int n);
