@@ -77,6 +77,7 @@ def training(model, input_size, batch_size, num_classes, device="cuda"):
     criterion = crypten.nn.CrossEntropyLoss()
     model = crypten.nn.from_pytorch(model, dummy_input=torch.empty(bs, c, h, w))
     model = model.to(device)
+    # print("model := ", model, ", with type ", type(model))
     model.encrypt() 
     model.train()
 
@@ -110,7 +111,7 @@ def training(model, input_size, batch_size, num_classes, device="cuda"):
             total_time += toc - tic
             comm_time += comm.get().comm_time
             conv_time += comm.get().time_conv
-            relu_time +=comm.get().time_relu
+            relu_time += comm.get().time_relu
             pool_time += comm.get().time_pool
             matmul_time += comm.get().time_matmul
             softmax_time += comm.get().time_softmax
@@ -346,10 +347,10 @@ def test():
     network = "lenet"
     device = "cuda"
     train = True
-    batch_size = 128
+    # batch_size = 128
+    batch_size = 32
     
     model, input_size, num_classes = select_model(dataset, network)
-
 
     if train:
         training(model, input_size, batch_size, num_classes, device)
