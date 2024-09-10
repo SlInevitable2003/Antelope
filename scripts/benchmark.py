@@ -33,7 +33,7 @@ def inference(model, input_size, batch_size=1, device="cuda"):
 
     model = crypten.nn.from_pytorch(model, dummy_input=torch.empty(bs, c, w, h))
     model = model.encrypt()
-    model = model.to(device) 
+    model = model.to(device)
 
     model.eval()
     model.replicate_parameters()
@@ -77,7 +77,6 @@ def training(model, input_size, batch_size, num_classes, device="cuda"):
     criterion = crypten.nn.CrossEntropyLoss()
     model = crypten.nn.from_pytorch(model, dummy_input=torch.empty(bs, c, h, w))
     model = model.to(device)
-    # print("model := ", model, ", with type ", type(model))
     model.encrypt() 
     model.train()
 
