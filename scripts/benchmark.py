@@ -367,7 +367,6 @@ parser.add_argument(
     help="Experiment to run",
 )
 
-
 if __name__ == '__main__':
     import os
     os.environ["CUDA_VISIBLE_DEVICES"] = '0'

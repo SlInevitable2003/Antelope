@@ -133,13 +133,13 @@ if __name__ == '__main__':
     args = parse_args()
 
     username = "root"
-    password = "yuhuan1234.."
+    password = "password.."
     hostnames = [
         "47.94.244.251",
         "47.95.6.191",
         "101.200.156.224",
     ]
-    master_ip_address = "172.23.209.175"
+    master_ip_address = "172.17.0.1"
 
     client_dict = {}
     for hostname in hostnames:

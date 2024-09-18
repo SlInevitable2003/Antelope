@@ -31,7 +31,7 @@ def run_experiment(args):
     )
 
     # Select the benchmark experiment to run. 
-    test_relu()
+    # test_relu()
     #train_all()
     #test_conv()
     # acc()
@@ -39,6 +39,7 @@ def run_experiment(args):
     # train_all_plaintext()
     #inference_all_plaintext()
     # batch_inference()
+    train_all()
 
 
 if __name__ == "__main__":
